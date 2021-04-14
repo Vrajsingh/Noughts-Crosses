@@ -1,0 +1,181 @@
+/* COLORS */
+:root {
+  --bg-color: #3A1412;
+  --off-white: rgba(19, 60, 119, 0.68);
+  --brown: #341412;
+  --orange: #F4511E;
+  --yellow: #FFFF00;
+  --square-border: blue;
+}
+
+/* BODY SET-UP */
+body {
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Righteous', cursive;
+  background-color: var(--bg-color);
+  background-image: url('data:image/svg+xml,%3Csvg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z" fill="%239C92AC" fill-opacity="0.4" fill-rule="evenodd"/%3E%3C/svg%3E');
+  
+}
+
+/* HEADER*/
+#heading-container {
+  width: 100%;
+  height: 12%;
+  margin: 0 0 5% 0;
+  background-color: var(--green);
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#heading-container>span {
+  font-size: 6vw;
+  color: var(--orange);
+  text-shadow: 0 2px 1px black;
+}
+#heading {
+  font-size: 6vw;
+  color: var(--yellow);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 1px black;
+}
+
+/* WINNERBOARD */
+#winnerBoard {
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  animation: shakey-poo .5s infinite;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#winnerBoard h1 {
+  animation: growInSize .5s 1;
+  margin: 0;
+  font-size: 9rem;
+  color: var(--orange);
+  text-shadow: 2px 2px 15px black;
+}
+#winnerSymbol {
+  color: var(--yellow);
+}
+
+/* GAMEBOARD */
+#tictactoeContainer {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 20px var(--square-border);
+  border-radius: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba (0, 0, 0, 0.5);
+  padding: 10px;
+  position:relative;
+  top: -90px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--square-border);
+  background-color: var(--off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+}
+
+.xo-sign {
+  animation-name: shakey-poo;
+  animation-duration: .25s;
+  animation-iteration-count: 3;
+}
+
+.yourTurn {
+  display: flex;
+  flex-direction: column;
+}
+.yourTurn:after {
+  content: 'MOVE';
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+  color: var(--yellow);
+  transform: translateY(-10px);
+  margin-bottom: 5px;
+}
+
+#playAgain-btn {
+  margin: 10px;
+  padding: 15px;
+  font-family: 'Righteous', cursive;
+  font-size: 1.8rem;
+  background-color: rgba(60, 37, 239, 0.53);
+  color: #fff;
+  box-shadow: 0 0 5px black;
+  outline-color: 0000cc;
+  position:relative;
+  top: -70px;
+}
+#playAgain-btn:hover {
+  background-color: var(--off-white);
+  color: var(--orange);
+}
+#playAgain-btn:active {
+  background-color: var(--green);
+  color: var(--off-white);
+  box-shadow: inset 0 0 5px black;
+  outline-color: var(--orange);
+}
+
+
+/* Winner */
+.winning-color {
+  background-color: #f75000;
+}
+
+footer {
+  background: rgb(217, 211, 33);
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size:large;
+}
+
+
+/* ANIMATIONS */
+@keyframes growInSize {
+  from{ font-size: 0;}
+  to{ font-size: 9rem;}
+}
+
+@keyframes shakey-poo {
+  0% { transform: skew(0deg) }
+  25% { transform: skew(5deg) }
+  50% { transform: skew(0deg) }
+  75% { transform: skew(-5deg) }
+  100% { transform: skew(0deg) }
+}
+
+@keyframes blink {
+  from{ visibility: visible }
+  to{ visibility: hidden }
+}
+
+.winnerBlink {
+  animation: blink .25 infinite;
+}
