@@ -83,7 +83,7 @@ body {
   background-color: rgba (0, 0, 0, 0.5);
   padding: 10px;
   position:relative;
-  top: -90px;
+  top: 200px;
 }
 
 .square {
@@ -126,7 +126,7 @@ body {
   box-shadow: 0 0 5px black;
   outline-color: 0000cc;
   position:relative;
-  top: -70px;
+  top: 300px;
 }
 #playAgain-btn:hover {
   background-color: var(--off-white);
