@@ -146,7 +146,7 @@ body {
 }
 
 footer {
-  background: rgb(217, 211, 33);
+  background: var(--yellow);
   position:fixed;
   left: 0;
   bottom: 0;
